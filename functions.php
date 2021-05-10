@@ -12,6 +12,7 @@
 //require get_template_directory() . '/woocommerce/woocommerce-functions.php';
 // WooCommerce End
 
+require get_template_directory() . '/inc/acf-loader.php';
 
 // Register Nav Walker class_alias
 if ( ! function_exists( 'register_navwalker' ) ) :
