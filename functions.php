@@ -1,4 +1,9 @@
 <?php
+
+//Register Custom Post Types and Custom Taxonomies
+require_once ('inc/custom-post-types.php');
+require_once ('inc/custom-categories-taxonomies.php');
+require_once ('inc/custom-tags-taxonomies.php');
 /**
  * Bootscore functions and definitions
  *
@@ -12,6 +17,7 @@
 //require get_template_directory() . '/woocommerce/woocommerce-functions.php';
 // WooCommerce End
 
+require get_template_directory() . '/inc/acf-loader.php';
 
 // Register Nav Walker class_alias
 if ( ! function_exists( 'register_navwalker' ) ) :
