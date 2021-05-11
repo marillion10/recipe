@@ -13,7 +13,7 @@
 			$title = single_term_title(__('', 'mybasictheme'), false);
 
 		} else if (is_home()) {
-			$title = __('Lyricsbox', 'mybasictheme');
+			$title = __('Welcome', 'mybasictheme');
 
 		} else if (is_search()) {
 			$title = sprintf(

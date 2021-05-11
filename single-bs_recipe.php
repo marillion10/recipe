@@ -26,12 +26,9 @@ get_header();  ?>
 						<?php the_title('<h1>', '</h1>'); ?>
 						<p class="entry-meta">
 							<small class="text-muted">
-								<?php
-								bootscore_date();
-								_e(' by ', 'bootscore');
-								the_author_posts_link();
-								bootscore_comment_count();
-								?>
+
+							<?php bs_recipe_meta(); ?>
+
 							</small>
 						</p>
 						<?php bootscore_post_thumbnail(); ?>

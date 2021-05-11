@@ -272,10 +272,10 @@ add_action('wp_head', 'mbt_wp_head_customizer_css');
  * @param int $length
  * @return int
  */
-function mybasictheme_excerpt_length() {
+function recipe_excerpt_length() {
 	return 12;
 }
-add_filter('excerpt_length', 'mybasictheme_excerpt_length', 12, 1);
+add_filter('excerpt_length', 'recipe_excerpt_length', 12, 1);
 
 /**
  * Change suffix on auto-generated excerpt.
@@ -283,10 +283,10 @@ add_filter('excerpt_length', 'mybasictheme_excerpt_length', 12, 1);
  * @param string $suffix
  * @return string
  */
-function mbt_filter_excerpt_more() {
+function bs_filter_excerpt_more() {
 	return "...";
 }
-add_filter('excerpt_more', 'mbt_filter_excerpt_more');
+add_filter('excerpt_more', 'bs_filter_excerpt_more');
 
 
 /**
@@ -660,14 +660,77 @@ if ( ! function_exists( 'bs_comment_links_in_new_tab' ) ) :
 endif;
 // Open links in comments in new tab
 
-	// Movie Review widget area
-	register_sidebar([
-		'name' => 'Peter and Niko Sidebar',
-		'id' => 'peter-niko-sidebar',
-		'description' => 'Sidebar only for peter and niko.',
-		'before_widget' => '<div id="%1$s" class="card mb-3 widget %2$s"><div class="card-body">',
-		'after_widget' => '</div></div>',
-		'before_title' => '<h3 class="widget-title h5">',
-		'after_title' => '</h3>',
-	]);
+
+function bs_post_meta($display = true) {
+	$post_meta = sprintf(
+		// translators: Used in blog post information, if a post is posted in one or more categories. Example: "Post published 23 april, 2021 at 09:37 by jn"
+		__('Post published %1$s at %2$s by %3$s', 'recipe'),
+		get_the_date(),
+		get_the_time(),
+		get_the_author()
+	);
+
+	if (has_category()) {
+		$post_meta = sprintf(
+			// translators: Used in blog post information, if a post is posted in one or more categories. Example: "Post published by jn in Ipsums"
+			_x('%1$s in %2$s', 'blog post category', 'recipe'),
+			$post_meta,
+			get_the_category_list(', ')
+		);
+	}
+
+	if (has_tag()) {
+		$post_meta = sprintf(
+			// translators: Used in blog post information, if a post has one or more tags. Example: "Post published by jn with tags grafitti, skate"
+			__('%1$s with tags %2$s', 'recipe'),
+			$post_meta,
+			get_the_tag_list('', ', ')
+		);
+	}
+
+	if ($display) {
+		echo $post_meta;
+	} else {
+		return $post_meta;
+	}
+}
+
+function bs_recipe_meta($display = true) {
+	global $post;
+
+	$post_meta = sprintf(
+		// translators: Used in movie review metadata. Example: "Review published 23 april, 2021 at 09:37 by jn"
+		__('Recipe published %1$s at %2$s by %3$s', 'recipe'),
+		get_the_date(),
+		get_the_time(),
+		get_the_author()
+	);
+
+	// $post_id = $post->ID;
+	$post_id = get_the_ID();
+
+	$genres = get_the_terms($post_id, 'bs_recipe_category');
+
+	if ($genres) {
+		$genre_links = [];
+		foreach ($genres as $genre) {
+			$genre_url = get_term_link($genre, 'bs_recipe_category');
+			$genre_link = sprintf('<a href="%s">%s</a>', $genre_url, $genre->name);
+			array_push($genre_links, $genre_link);
+		}
+
+		$post_meta = sprintf(
+			// translators: Used in movie review metadata, if a movie has one or more genres. Example: "Review published by jn in Bromance, Wi-fi"
+			_x('%1$s in %2$s', 'bs recipe category', 'recipe'),
+			$post_meta,
+			implode(', ', $genre_links)
+		);
+	}
+
+	if ($display) {
+		echo $post_meta;
+	} else {
+		return $post_meta;
+	}
+}
 
