@@ -3,23 +3,23 @@
 function cptui_register_my_cpts_bs_recipe() {
 
 /**
- * Post Type: recepies.
+ * Post Type: recipes.
  */
 
 $labels = [
-	"name" => __( "recepies", "custom-post-type-ui" ),
+	"name" => __( "recipes", "custom-post-type-ui" ),
 	"singular_name" => __( "recipe", "custom-post-type-ui" ),
-	"menu_name" => __( "Recepies", "custom-post-type-ui" ),
-	"all_items" => __( "All recepies", "custom-post-type-ui" ),
+	"menu_name" => __( "Recipes", "custom-post-type-ui" ),
+	"all_items" => __( "All recipes", "custom-post-type-ui" ),
 	"add_new" => __( "Add new", "custom-post-type-ui" ),
 	"add_new_item" => __( "Add new recipe", "custom-post-type-ui" ),
 	"edit_item" => __( "Edit recipe", "custom-post-type-ui" ),
 	"new_item" => __( "New recipe", "custom-post-type-ui" ),
 	"view_item" => __( "View recipe", "custom-post-type-ui" ),
-	"view_items" => __( "View recepies", "custom-post-type-ui" ),
-	"search_items" => __( "Search recepies", "custom-post-type-ui" ),
-	"not_found" => __( "No recepies found", "custom-post-type-ui" ),
-	"not_found_in_trash" => __( "No recepies found in trash", "custom-post-type-ui" ),
+	"view_items" => __( "View recipes", "custom-post-type-ui" ),
+	"search_items" => __( "Search recipes", "custom-post-type-ui" ),
+	"not_found" => __( "No recipes found", "custom-post-type-ui" ),
+	"not_found_in_trash" => __( "No recipes found in trash", "custom-post-type-ui" ),
 	"parent" => __( "Parent recipe:", "custom-post-type-ui" ),
 	"featured_image" => __( "Featured image for this recipe", "custom-post-type-ui" ),
 	"set_featured_image" => __( "Set featured image for this recipe", "custom-post-type-ui" ),
@@ -28,10 +28,10 @@ $labels = [
 	"archives" => __( "recipe archives", "custom-post-type-ui" ),
 	"insert_into_item" => __( "Insert into recipe", "custom-post-type-ui" ),
 	"uploaded_to_this_item" => __( "Upload to this recipe", "custom-post-type-ui" ),
-	"filter_items_list" => __( "Filter recepies list", "custom-post-type-ui" ),
-	"items_list_navigation" => __( "recepies list navigation", "custom-post-type-ui" ),
-	"items_list" => __( "recepies list", "custom-post-type-ui" ),
-	"attributes" => __( "recepies attributes", "custom-post-type-ui" ),
+	"filter_items_list" => __( "Filter recipes list", "custom-post-type-ui" ),
+	"items_list_navigation" => __( "recipes list navigation", "custom-post-type-ui" ),
+	"items_list" => __( "recipes list", "custom-post-type-ui" ),
+	"attributes" => __( "recipes attributes", "custom-post-type-ui" ),
 	"name_admin_bar" => __( "recipe", "custom-post-type-ui" ),
 	"item_published" => __( "recipe published", "custom-post-type-ui" ),
 	"item_published_privately" => __( "recipe published privately.", "custom-post-type-ui" ),
@@ -42,7 +42,7 @@ $labels = [
 ];
 
 $args = [
-	"label" => __( "recepies", "custom-post-type-ui" ),
+	"label" => __( "recipes", "custom-post-type-ui" ),
 	"labels" => $labels,
 	"description" => "",
 	"public" => true,
