@@ -7,15 +7,15 @@
  * @package Bootscore
  */
 
+ // Shows ingredients name and amount, two subfields
 if (!function_exists('bootscore_bs_ingridients')) {
 	function bootscore_bs_ingridients() {
-		// bail if ACF is not installed/activated, as we won't have a movie poster to show anyway 😝
+		// Not shown if not installed or activated
 		if (!function_exists('get_field')) {
 			return;
 		}
 
 		if (have_rows('ingridients')) {
-			// yes we have at least one row of sub-fields to show!
 
 			echo '<dl>';
 			while (have_rows('ingridients')) {
@@ -24,16 +24,6 @@ if (!function_exists('bootscore_bs_ingridients')) {
 				$label = get_sub_field('ingridient');
 				$value = get_sub_field('amount');
 
-				/**
-				 * <li>
-				 *   <strong>Biopremiär:</strong>
-				 *   7 november 2014
-				 * </li>
-				 * <li>
-				 *   <strong>Språk:</strong>
-				 *   Engelska
-				 * </li>
-				 */
 				printf('<dt>%s</dt><dd>%s</dd>', $label, $value);
 			}
 			echo '</dl>';
@@ -41,6 +31,7 @@ if (!function_exists('bootscore_bs_ingridients')) {
 	}
 }
 
+// Shows a headline for ingredients
 if (!function_exists('bootscore_bs_headline')) {
 	function bootscore_bs_headline()
 	{
@@ -53,6 +44,7 @@ if (!function_exists('bootscore_bs_headline')) {
 	}
 }
 
+// Shows instructions for a recipe
 if (!function_exists('bootscore_bs_instructions')) {
 	function bootscore_bs_instructions()
 	{
@@ -60,12 +52,12 @@ if (!function_exists('bootscore_bs_instructions')) {
 		$instructions = get_post_meta(get_the_ID(), 'instructions', true);
 
 		if (!empty($instructions)) {
-			echo '<div class="bg-light text-dark mt-5 py-1 px-1">', $instructions, '<p>', '</div>';
+			echo '<div class="bg-light text-dark mt-5 py-1 px-1 row justify-content-around">', '<div class="col-8">', $instructions, '<p>', '</div>', '</div>';
 		}
 	}
 }
 
-
+// Shows name and number of portions, these are subfields
 if (!function_exists('bootscore_bs_servings')) {
 	function bootscore_bs_servings()
 	{
@@ -74,7 +66,6 @@ if (!function_exists('bootscore_bs_servings')) {
 		}
 
 		if (have_rows('servings')) {
-			// yes we have at least one row of sub-fields to show!
 
 			echo '<dl>';
 			while (have_rows('servings')) {
@@ -83,16 +74,6 @@ if (!function_exists('bootscore_bs_servings')) {
 				$label = get_sub_field('portions');
 				$value = get_sub_field('amount');
 
-				/**
-				 * <li>
-				 *   <strong>Biopremiär:</strong>
-				 *   7 november 2014
-				 * </li>
-				 * <li>
-				 *   <strong>Språk:</strong>
-				 *   Engelska
-				 * </li>
-				 */
 				printf('<dt>%s</dt><dd>%s</dd>', $label, $value);
 			}
 			echo '</dl>';

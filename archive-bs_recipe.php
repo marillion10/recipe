@@ -26,7 +26,7 @@ get_header();
 
 					<!-- Title & Description -->
 					<header class="page-header mb-4">
-						<h1><?php the_archive_title(); ?></h1>
+						<h1><?php bloginfo(); ?></h1>
 						<?php the_archive_description('<div class="archive-description">', '</div>'); ?>
 					</header>
 
@@ -35,35 +35,13 @@ get_header();
 						<?php while (have_posts()) : the_post(); ?>
 							<div class="card horizontal mb-4">
 								<div class="row">
-									<!-- Featured Image-->
-									<?php if (has_post_thumbnail())
-										echo '<div class="card-img-left-md col-lg-5">' . get_the_post_thumbnail(null, 'medium') . '</div>';
-									?>
+
 									<div class="col">
 										<div class="card-body">
 
 											<?php get_template_part('template-parts/content-bs_recipe', 'excerpt'); ?>
 											<!-- Title -->
-											<h2 class="blog-post-title">
-												<a href="<?php the_permalink(); ?>">
-													<?php the_title(); ?>
-												</a>
-											</h2>
-											<!-- Meta -->
-											<?php if ('post' === get_post_type()) : ?>
-												<small class="text-muted mb-2">
-													<?php
-													bootscore_date();
-													bootscore_author();
-													bootscore_comments();
-													bootscore_edit();
-													?>
-												</small>
-											<?php endif; ?>
-											<!-- Excerpt & Read more -->
-											<div class="card-text mt-auto">
-												<?php the_excerpt(); ?> <a class="read-more" href="<?php the_permalink(); ?>"><?php _e('Read more »', 'bootscore'); ?></a>
-											</div>
+
 											<!-- Tags -->
 											<?php bootscore_tags(); ?>
 										</div>

@@ -4,9 +4,11 @@ get_template_part('template-parts/header-image');
 ?>
 
 <!-- tag.php -->
-<main class="container mt-5">
+<main class="container pt-5">
 	<?php if (!get_header_image()) : ?>
-		<h1 class="text-dark"><?php bloginfo('name'); ?></h1>
+		<h1 class="mt-5"><?php the_title(); ?></h1>
+		
+
 	<?php endif; ?>
 
 	<div class="row">

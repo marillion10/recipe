@@ -25,9 +25,10 @@
 						<!-- after the_excerpt(); -->
 					</div>
 
-					<div>
-						<a href="<?php the_permalink(); ?>" class="btn btn-secondary"><?php _e('Read more &raquo;', 'recipe'); ?></a>
-					</div>
+											<!-- Excerpt & Read more -->
+											<div class="card-text mt-auto">
+												<a class="read-more" href="<?php get_the_permalink(); ?>"><?php _e('Read more »', 'recipe'); ?></a>
+											</div>
 
 					<footer>
 						<div class="card-meta text-muted small mb-2">
