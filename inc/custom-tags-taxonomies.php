@@ -1,6 +1,6 @@
 <?php
 
-function cptui_register_my_taxes_bs_recipie_tags() {
+function cptui_register_my_taxes_bs_recipe_tag() {
 
 /**
  * Taxonomy: recipe tags.
@@ -41,14 +41,14 @@ $args = [
 	"show_in_menu" => true,
 	"show_in_nav_menus" => true,
 	"query_var" => true,
-	"rewrite" => [ 'slug' => 'bs_recipie_tags', 'with_front' => true, ],
+	"rewrite" => [ 'slug' => 'bs_recipe_tag', 'with_front' => true, ],
 	"show_admin_column" => false,
 	"show_in_rest" => true,
-	"rest_base" => "bs_recipie_tags",
+	"rest_base" => "bs_recipe_tag",
 	"rest_controller_class" => "WP_REST_Terms_Controller",
 	"show_in_quick_edit" => false,
 	"show_in_graphql" => false,
 ];
-register_taxonomy( "bs_recipie_tags", [ "bs_recipe" ], $args );
+register_taxonomy( "bs_recipe_tag", [ "bs_recipe" ], $args );
 }
-add_action( 'init', 'cptui_register_my_taxes_bs_recipie_tags' );
+add_action( 'init', 'cptui_register_my_taxes_bs_recipe_tag' );

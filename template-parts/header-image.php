@@ -1,29 +1,29 @@
 <?php if (get_header_image()) : ?>
 	<?php
 		if (is_category()) {
-			$title = single_cat_title(__('', 'mybasictheme'), false);
+			$title = single_cat_title(__('', 'recipe'), false);
 
 		} else if (is_tag()) {
-			$title = single_tag_title(__('Tag: ', 'mybasictheme'), false);
+			$title = single_tag_title(__('Tag: ', 'recipe'), false);
 
 		} else if (is_post_type_archive()) {
 			$title = post_type_archive_title('', false);
 
 		} else if (is_tax('mbt_movie_genre')) {
-			$title = single_term_title(__('', 'mybasictheme'), false);
+			$title = single_term_title(__('', 'recipe'), false);
 
 		} else if (is_home()) {
-			$title = __('Lyricsbox', 'mybasictheme');
+			$title = __('Welcome', 'recipe');
 
 		} else if (is_search()) {
 			$title = sprintf(
 				// translators: Search results for query %s
-				__('Search results for "%s"', 'mybasictheme'),
+				__('Search results for "%s"', 'recipe'),
 				htmlspecialchars($_REQUEST['s'])
 			);
 
 		} else {
-			$title = get_the_title();
+			$title = get_the_archive_title();
 
 		}
 	?>

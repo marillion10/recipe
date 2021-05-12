@@ -7,6 +7,80 @@
  * @package Bootscore
  */
 
+ // Shows ingredients name and amount, two subfields
+if (!function_exists('bootscore_bs_ingridients')) {
+	function bootscore_bs_ingridients() {
+		// Not shown if not installed or activated
+		if (!function_exists('get_field')) {
+			return;
+		}
+
+		if (have_rows('ingridients')) {
+
+			echo '<dl>';
+			while (have_rows('ingridients')) {
+				the_row();
+
+				$label = get_sub_field('ingridient');
+				$value = get_sub_field('amount');
+
+				printf('<dt>%s</dt><dd>%s</dd>', $label, $value);
+			}
+			echo '</dl>';
+		}
+	}
+}
+
+// Shows a headline for ingredients
+if (!function_exists('bootscore_bs_headline')) {
+	function bootscore_bs_headline()
+	{
+
+		$headline = get_post_meta(get_the_ID(), 'ingridients_headline', true);
+
+		if (!empty($headline)) {
+			echo '<div class="bg-secondary text-dark fw-bold py-1 px-1 mb-3">', $headline, '<p>', '</div>';
+		}
+	}
+}
+
+// Shows instructions for a recipe
+if (!function_exists('bootscore_bs_instructions')) {
+	function bootscore_bs_instructions()
+	{
+
+		$instructions = get_post_meta(get_the_ID(), 'instructions', true);
+
+		if (!empty($instructions)) {
+			echo '<div class="bg-light text-dark mt-5 py-1 px-1 row justify-content-around">', '<div class="col-8">', $instructions, '<p>', '</div>', '</div>';
+		}
+	}
+}
+
+// Shows name and number of portions, these are subfields
+if (!function_exists('bootscore_bs_servings')) {
+	function bootscore_bs_servings()
+	{
+		if (!function_exists('get_field')) {
+			return;
+		}
+
+		if (have_rows('servings')) {
+
+			echo '<dl>';
+			while (have_rows('servings')) {
+				the_row();
+
+				$label = get_sub_field('portions');
+				$value = get_sub_field('amount');
+
+				printf('<dt>%s</dt><dd>%s</dd>', $label, $value);
+			}
+			echo '</dl>';
+		}
+	}
+}
+
 
 // Category Badge
 if ( ! function_exists( 'bootscore_category_badge' ) ) :
@@ -21,7 +95,7 @@ if ( ! function_exists( 'bootscore_category_badge' ) ) :
 						    $thelist .= '<a href="' . esc_url( get_category_link( $category->term_id ) ) . '" class="badge bg-secondary">' . $category->name.'</a>';
 						    $i++;
             }
-            echo $thelist;	
+            echo $thelist;
             echo '</div>';
 		}
 	}
@@ -38,8 +112,8 @@ if ( ! function_exists( 'bootscore_category' ) ) :
 			$categories_list = get_the_category_list( esc_html__( ', ', 'bootscore' ) );
 			if ( $categories_list ) {
 				/* translators: 1: list of categories. */
-				printf( '<span class="cat-links"></span>', $categories_list ); // WPCS: XSS OK.	
-			}		
+				printf( '<span class="cat-links"></span>', $categories_list ); // WPCS: XSS OK.
+			}
 		}
 	}
 endif;
@@ -119,7 +193,7 @@ if ( ! function_exists( 'bootscore_comments' ) ) :
 			);
 			echo '</span>';
 		}
-	
+
 	}
 endif;
 // Comments End
@@ -151,7 +225,7 @@ if ( ! function_exists( 'bootscore_edit' ) ) :
 	}
 endif;
 // Edit Link End
-		
+
 
 // Single Comments Count
 if ( ! function_exists( 'bootscore_comment_count' ) ) :
@@ -260,7 +334,7 @@ if ( ! function_exists( 'bootscore_ie_alert' ) ) :
                     </div>
                ';
             }
-        
+
 	}
 endif;
 
