@@ -1,4 +1,4 @@
-<article class="movie-review card mb-4">
+<article class="card mb-4">
 
 	<?php if (has_post_thumbnail()) : ?>
 		<div class="row g-0">
@@ -27,7 +27,7 @@
 
 											<!-- Excerpt & Read more -->
 											<div class="card-text mt-auto">
-												<a class="read-more" href="<?php get_the_permalink(); ?>"><?php _e('Read more »', 'recipe'); ?></a>
+												<a class="read-more" href="<?php the_permalink(); ?>"><?php _e('Read more »', 'recipe'); ?></a>
 											</div>
 
 					<footer>
