@@ -27,7 +27,7 @@ get_header();
 					<!-- Title & Description -->
 					<header class="page-header mb-4">
 						<h1><?php bloginfo(); ?></h1>
-						<?php the_archive_description('<div class="archive-description">', '</div>'); ?>
+
 					</header>
 
 					<!-- Grid Layout -->

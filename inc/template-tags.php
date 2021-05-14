@@ -7,56 +7,6 @@
  * @package Bootscore
  */
 
- // Shows ingredients name and amount, two subfields
-if (!function_exists('bootscore_bs_ingridients')) {
-	function bootscore_bs_ingridients() {
-		// Not shown if not installed or activated
-		if (!function_exists('get_field')) {
-			return;
-		}
-
-		if (have_rows('ingridients')) {
-
-			echo '<dl>';
-			while (have_rows('ingridients')) {
-				the_row();
-
-				$label = get_sub_field('ingridient');
-				$value = get_sub_field('amount');
-
-				printf('<dt>%s</dt><dd>%s</dd>', $label, $value);
-			}
-			echo '</dl>';
-		}
-	}
-}
-
-// Shows a headline for ingredients
-if (!function_exists('bootscore_bs_headline')) {
-	function bootscore_bs_headline()
-	{
-
-		$headline = get_post_meta(get_the_ID(), 'ingridients_headline', true);
-
-		if (!empty($headline)) {
-			echo '<div class="bg-secondary text-dark fw-bold py-1 px-1 mb-3">', $headline, '<p>', '</div>';
-		}
-	}
-}
-
-// Shows instructions for a recipe
-if (!function_exists('bootscore_bs_instructions')) {
-	function bootscore_bs_instructions()
-	{
-
-		$instructions = get_post_meta(get_the_ID(), 'instructions', true);
-
-		if (!empty($instructions)) {
-			echo '<div class="bg-light text-dark mt-5 py-1 px-1 row justify-content-around">', '<div class="col-8">', $instructions, '<p>', '</div>', '</div>';
-		}
-	}
-}
-
 // Shows name and number of portions, these are subfields
 if (!function_exists('bootscore_bs_servings')) {
 	function bootscore_bs_servings()
@@ -81,6 +31,57 @@ if (!function_exists('bootscore_bs_servings')) {
 	}
 }
 
+// Shows a headline for ingredients
+if (!function_exists('bootscore_bs_headline')) {
+	function bootscore_bs_headline()
+	{
+
+		$headline = get_post_meta(get_the_ID(), 'ingridients_headline', true);
+
+		if (!empty($headline)) {
+			echo '<div class="bg-secondary text-dark fw-bold py-1 px-1 mb-3">', $headline, '<p>', '</div>';
+		}
+	}
+}
+
+
+ // Shows ingredients name and amount, two subfields
+ if (!function_exists('bootscore_bs_ingridients')) {
+	function bootscore_bs_ingridients() {
+		// Not shown if not installed or activated
+		if (!function_exists('get_field')) {
+			return;
+		}
+
+		if (have_rows('ingridients')) {
+
+			echo '<ul>';
+
+			while (have_rows('ingridients')) {
+				the_row();
+
+				$label = get_sub_field('ingridient');
+				$value = get_sub_field('amount');
+
+				printf('<li>%s %s</li>', $label, $value);
+			}
+			echo '</ul>';
+		}
+	}
+}
+
+// Shows instructions for a recipe
+if (!function_exists('bootscore_bs_instructions')) {
+	function bootscore_bs_instructions()
+	{
+
+		$instructions = get_post_meta(get_the_ID(), 'instructions', true);
+
+		if (!empty($instructions)) {
+			echo '<div class="bg-light text-dark mt-5 py-1 px-1">', '<div class="col-8">', $instructions, '<p>', '</div>', '</div>';
+		}
+	}
+}
 
 // Category Badge
 if ( ! function_exists( 'bootscore_category_badge' ) ) :

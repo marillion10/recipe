@@ -3,19 +3,19 @@
 		if (is_category()) {
 			$title = single_cat_title(__('', 'recipe'), false);
 
-		} else if (is_tag()) {
-			$title = single_tag_title(__('Tag: ', 'recipe'), false);
-
-		} else if (is_post_type_archive()) {
-			$title = post_type_archive_title('', false);
-
-		} else if (is_tax('mbt_movie_genre')) {
+		} else if (is_tax('bs_recipe_tag')) {
 			$title = single_term_title(__('', 'recipe'), false);
 
-		} else if (is_home()) {
-			$title = __('Welcome', 'recipe');
+		} else if (is_post_type_archive('')) {
+			$title = get_bloginfo('', false);
 
-		} else if (is_search()) {
+		} else if (is_tax('bs_recipe_category')) {
+			$title = single_term_title(__('', 'recipe'), false);
+
+		}else if (is_single()) {
+			$title = __('Recipe', 'recipe');
+
+		}else if (is_search()) {
 			$title = sprintf(
 				// translators: Search results for query %s
 				__('Search results for "%s"', 'recipe'),
@@ -23,7 +23,7 @@
 			);
 
 		} else {
-			$title = get_the_archive_title();
+			$title = get_the_title();
 
 		}
 	?>
@@ -35,7 +35,7 @@
 			class="img-fluid"
 		>
 		<div class="header-text-wrapper">
-			<div class="header-text display-4"><?php echo $title; ?></div>
+			<div class="header-text display-5 mt-5"><?php echo $title; ?></div>
 		</div>
 	</div>
 <?php endif; ?>

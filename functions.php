@@ -320,9 +320,9 @@ if ( ! function_exists( 'bootscore_widgets_init' ) ) :
 
         // Top Nav
         register_sidebar(array(
-            'name' => esc_html__('Top Nav', 'bootscore' ),
+            'name' => esc_html__('Top Nav', 'recipe' ),
             'id' => 'top-nav',
-            'description' => esc_html__('Add widgets here.', 'bootscore' ),
+            'description' => esc_html__('Add widgets here.', 'recipe' ),
             'before_widget' => '<div class="ms-3">',
             'after_widget' => '</div>',
             'before_title' => '<div class="widget-title d-none">',
@@ -332,9 +332,9 @@ if ( ! function_exists( 'bootscore_widgets_init' ) ) :
 
         // Top Nav Search
         register_sidebar(array(
-            'name' => esc_html__('Top Nav Search', 'bootscore' ),
+            'name' => esc_html__('Top Nav Search', 'recipe' ),
             'id' => 'top-nav-search',
-            'description' => esc_html__('Add widgets here.', 'bootscore' ),
+            'description' => esc_html__('Add widgets here.', 'recipe' ),
             'before_widget' => '<div class="top-nav-search">',
             'after_widget' => '</div>',
             'before_title' => '<div class="widget-title d-none">',
@@ -344,9 +344,9 @@ if ( ! function_exists( 'bootscore_widgets_init' ) ) :
 
         // Sidebar
         register_sidebar( array(
-            'name'          => esc_html__( 'Sidebar', 'bootscore' ),
+            'name'          => esc_html__( 'Sidebar', 'recipe' ),
             'id'            => 'sidebar-1',
-            'description'   => esc_html__( 'Add widgets here.', 'bootscore' ),
+            'description'   => esc_html__( 'Add widgets here.', 'recipe' ),
             'before_widget' => '<section id="%1$s" class="widget %2$s card card-body mb-4 bg-light border-0">',
             'after_widget'  => '</section>',
             'before_title'  => '<h2 class="widget-title card-title border-bottom py-2">',
@@ -356,9 +356,9 @@ if ( ! function_exists( 'bootscore_widgets_init' ) ) :
 
         // Top Footer
         register_sidebar(array(
-            'name' => esc_html__('Top Footer', 'bootscore' ),
+            'name' => esc_html__('Top Footer', 'recipe' ),
             'id' => 'top-footer',
-            'description' => esc_html__('Add widgets here.', 'bootscore' ),
+            'description' => esc_html__('Add widgets here.', 'recipe' ),
             'before_widget' => '<div class="footer_widget mb-5">',
             'after_widget' => '</div>',
             'before_title' => '<h2 class="widget-title">',
@@ -368,9 +368,9 @@ if ( ! function_exists( 'bootscore_widgets_init' ) ) :
 
         // Footer 1
         register_sidebar(array(
-            'name' => esc_html__('Footer 1', 'bootscore' ),
+            'name' => esc_html__('Footer 1', 'recipe' ),
             'id' => 'footer-1',
-            'description' => esc_html__('Add widgets here.', 'bootscore' ),
+            'description' => esc_html__('Add widgets here.', 'recipe' ),
             'before_widget' => '<div class="footer_widget mb-4">',
             'after_widget' => '</div>',
             'before_title' => '<h2 class="widget-title h4">',
@@ -380,9 +380,9 @@ if ( ! function_exists( 'bootscore_widgets_init' ) ) :
 
         // Footer 2
         register_sidebar(array(
-            'name' => esc_html__('Footer 2', 'bootscore' ),
+            'name' => esc_html__('Footer 2', 'recipe' ),
             'id' => 'footer-2',
-            'description' => esc_html__('Add widgets here.', 'bootscore'),
+            'description' => esc_html__('Add widgets here.', 'recipe'),
             'before_widget' => '<div class="footer_widget mb-4">',
             'after_widget' => '</div>',
             'before_title' => '<h2 class="widget-title h4">',
@@ -392,9 +392,9 @@ if ( ! function_exists( 'bootscore_widgets_init' ) ) :
 
         // Footer 3
         register_sidebar(array(
-            'name' => esc_html__('Footer 3', 'bootscore' ),
+            'name' => esc_html__('Footer 3', 'recipe' ),
             'id' => 'footer-3',
-            'description' => esc_html__('Add widgets here.', 'bootscore'),
+            'description' => esc_html__('Add widgets here.', 'recipe'),
             'before_widget' => '<div class="footer_widget mb-4">',
             'after_widget' => '</div>',
             'before_title' => '<h2 class="widget-title h4">',
@@ -404,9 +404,9 @@ if ( ! function_exists( 'bootscore_widgets_init' ) ) :
 
         // Footer 4
         register_sidebar(array(
-            'name' => esc_html__('Footer 4', 'bootscore' ),
+            'name' => esc_html__('Footer 4', 'recipe' ),
             'id' => 'footer-4',
-            'description' => esc_html__('Add widgets here.', 'bootscore'),
+            'description' => esc_html__('Add widgets here.', 'recipe'),
             'before_widget' => '<div class="footer_widget mb-4">',
             'after_widget' => '</div>',
             'before_title' => '<h2 class="widget-title h4">',
@@ -416,9 +416,9 @@ if ( ! function_exists( 'bootscore_widgets_init' ) ) :
 
         // 404 Page
         register_sidebar(array(
-            'name' => esc_html__('404 Page', 'bootscore' ),
+            'name' => esc_html__('404 Page', 'recipe' ),
             'id' => '404-page',
-            'description' => esc_html__('Add widgets here.', 'bootscore'),
+            'description' => esc_html__('Add widgets here.', 'recipe'),
             'before_widget' => '<div class="mb-4">',
             'after_widget' => '</div>',
             'before_title' => '<h1 class="widget-title">',
@@ -426,7 +426,20 @@ if ( ! function_exists( 'bootscore_widgets_init' ) ) :
         ));
         // 404 Page End
 
-    }
+	// Recipe sidebar
+		// Movie Review widget area
+		register_sidebar([
+			'name' => __('Recipe Sidebar', 'recipe'),
+			'id' => 'recipe-sidebar',
+			'description' => __('Add widgets here', 'recipe'),
+			'before_widget' => '<div id="%1$s" class="card mb-3 widget %2$s"><div class="card-body">',
+			'after_widget' => '</div></div>',
+			'before_title' => '<h3 class="widget-title h5">',
+			'after_title' => '</h3>',
+		]);
+		// Recipe sidebar end
+	}
+
     add_action( 'widgets_init', 'bootscore_widgets_init' );
 
 
@@ -721,16 +734,42 @@ function bs_recipe_meta($display = true) {
 
 		$post_meta = sprintf(
 			// translators: Used in movie review metadata, if a movie has one or more genres. Example: "Review published by jn in Bromance, Wi-fi"
-			_x('%1$s in %2$s', 'bs recipe category', 'recipe'),
+			_x('%1$s categories %2$s', 'bs recipe category', 'recipe'),
 			$post_meta,
 			implode(', ', $genre_links)
 		);
 	}
+
+
+
+	// $post_id = $post->ID;
+	$postid = get_the_ID();
+
+	$tags = get_the_terms($postid, 'bs_recipe_tag');
+
+	if ($tags) {
+		$tag_links = [];
+		foreach ($tags as $tag) {
+			$tag_url = get_term_link($tag, 'bs_recipe_tag');
+			$tag_link = sprintf('<a href="%s">%s</a>', $tag_url, $tag->name);
+			array_push($tag_links, $tag_link);
+		}
+
+		$post_meta = sprintf(
+			// translators: Used in movie review metadata, if a movie has one or more genres. Example: "Review published by jn in Bromance, Wi-fi"
+			_x('%1$s tags %2$s', 'bs recipe tag', 'recipe'),
+			$post_meta,
+			implode(', ', $tag_links)
+		);
+	}
+
 
 	if ($display) {
 		echo $post_meta;
 	} else {
 		return $post_meta;
 	}
+
+
 }
 
