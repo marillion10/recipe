@@ -45,7 +45,9 @@ get_header();  ?>
 
 			<div class="container">
 	<div class="row">
-		<div class="col-6"><?php bootscore_bs_ingridients(); ?></div>
+
+		<div class="col-6"><?php bootscore_bs_headline(); ?>
+		<?php bootscore_bs_ingridients(); ?></div>
 		<div class="col-6"><?php bootscore_bs_instructions(); ?></div>
 	</div>
 </div>
