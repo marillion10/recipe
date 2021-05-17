@@ -90,12 +90,18 @@ if (!function_exists('bootscore_setup')) :
 		 *
 		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 		 */
+
+		/**
+		 * Declare our own image size for archives
+		 */
+		add_image_size('featured-image-thumb', 150, 9999);
+
 		add_theme_support('post-thumbnails');
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus(array(
-			'primary' => esc_html__('Main Menu', 'bootscore'),
-			'secondary' => esc_html__('Footer Menu', 'bootscore'),
+			'primary' => esc_html__('Main Menu', 'recipe'),
+			'secondary' => esc_html__('Footer Menu', 'recipe'),
 		));
 
 		/*
@@ -480,8 +486,8 @@ function bootscore_scripts()
 	// Bootstrap JS
 	wp_enqueue_script('bootstrap', get_template_directory_uri() . '/js/lib/bootstrap.bundle.min.js', array(), '20151215', true);
 
-		// Flexslider JS
-		wp_enqueue_script('flexslider', get_template_directory_uri() . '/js/lib/jquery.flexslider-min.js', ['jquery'], '2.7.2', true);
+	// Flexslider JS
+	wp_enqueue_script('flexslider', get_template_directory_uri() . '/js/lib/jquery.flexslider-min.js', ['jquery'], '2.7.2', true);
 
 	// Theme JS
 	wp_enqueue_script('bootscore-script', get_template_directory_uri() . '/js/theme.js', array(), '20151215', true);

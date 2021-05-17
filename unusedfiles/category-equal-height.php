@@ -6,7 +6,7 @@
 	 *
 	 * @package Bootscore
 	 */
-	
+
 	get_header();
 	?>
 <div id="content" class="site-content container py-5 mt-5">
@@ -17,19 +17,9 @@
 
         <main id="main" class="site-main">
 
-            <!-- Title & Description -->
             <header class="page-header mb-4">
-
-                <div class="row mb-4">
-                    <div class="col avatar">
-                        <?php echo get_avatar( get_the_author_meta('email'), '128', $default='', $alt='', array( 'class' => array( 'rounded' ) ) ); ?>
-                    </div>
-                    <div class="col">
-                        <h1><?php the_author(); ?></h1>
-                        <?php the_author_meta('description'); ?>
-                    </div>
-                </div>
-
+                <h1><?php single_cat_title(); ?></h1>
+                <?php the_archive_description( '<div class="archive-description">', '</div>' ); ?>
             </header>
 
             <div class="row">

@@ -6,7 +6,7 @@
 	 *
 	 * @package Bootscore
 	 */
-	
+
 	get_header();
 	?>
 <div id="content" class="site-content container py-5 mt-5">
@@ -69,7 +69,7 @@
                                     </div>
 
                                     <div class="mt-auto">
-                                        <a class="read-more" href="<?php the_permalink(); ?>"><?php _e('Read more »', 'bootscore'); ?></a>
+                                        <a class="read-more" href="<?php the_permalink(); ?>"><?php _e('Read more »', 'recipe'); ?></a>
                                     </div>
 
                                     <?php bootscore_tags(); ?>

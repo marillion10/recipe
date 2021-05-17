@@ -62,7 +62,7 @@ get_template_part('template-parts/header-image');
                                     <?php endif; ?>
                                     <!-- Excerpt & Read more -->
                                     <div class="card-text mt-auto">
-                                        <?php the_excerpt(); ?> <a class="read-more" href="<?php the_permalink(); ?>"><?php _e('Read more »', 'bootscore'); ?></a>
+                                        <?php the_excerpt(); ?> <a class="read-more" href="<?php the_permalink(); ?>"><?php _e('Read more »', 'recipe'); ?></a>
                                     </div>
                                     <!-- Tags -->
                                     <?php bootscore_tags(); ?>

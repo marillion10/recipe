@@ -1,12 +1,12 @@
 <?php
 	/**
-	 * Category Template: Masonry
+	 * Category Template: Equal Height
 	 *
 	 * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
 	 *
 	 * @package Bootscore
 	 */
-	
+
 	get_header();
 	?>
 <div id="content" class="site-content container py-5 mt-5">
@@ -14,25 +14,35 @@
 
         <!-- Hook to add something nice -->
         <?php bs_after_primary(); ?>
-        
+
         <main id="main" class="site-main">
 
+            <!-- Title & Description -->
             <header class="page-header mb-4">
-                <h1><?php single_cat_title(); ?></h1>
-                <?php the_archive_description( '<div class="archive-description">', '</div>' ); ?>
+
+                <div class="row mb-4">
+                    <div class="col avatar">
+                        <?php echo get_avatar( get_the_author_meta('email'), '128', $default='', $alt='', array( 'class' => array( 'rounded' ) ) ); ?>
+                    </div>
+                    <div class="col">
+                        <h1><?php the_author(); ?></h1>
+                        <?php the_author_meta('description'); ?>
+                    </div>
+                </div>
+
             </header>
 
-            <div class="row" data-masonry='{"percentPosition": true }'>
+            <div class="row">
                 <?php if (have_posts() ) : ?>
                 <?php while (have_posts() ) : the_post(); ?>
 
                 <div class="col-md-6 col-lg-4 col-xxl-3 mb-4">
 
-                    <div class="card">
+                    <div class="card h-100">
 
                         <?php the_post_thumbnail('medium', array('class' => 'card-img-top')); ?>
 
-                        <div class="card-body">
+                        <div class="card-body d-flex flex-column">
 
                             <?php bootscore_category_badge(); ?>
 
@@ -59,8 +69,8 @@
                                 <?php the_excerpt(); ?>
                             </div>
 
-                            <div class="">
-                                <a class="read-more" href="<?php the_permalink(); ?>"><?php _e('Read more »', 'bootscore'); ?></a>
+                            <div class="mt-auto">
+                                <a class="read-more" href="<?php the_permalink(); ?>"><?php _e('Read more »', 'recipe'); ?></a>
                             </div>
 
                             <?php bootscore_tags(); ?>

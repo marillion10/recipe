@@ -1,12 +1,12 @@
 <?php
 	/**
-	 * Category Template: Equal Height
+	 * Category Template: Masonry
 	 *
 	 * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
 	 *
 	 * @package Bootscore
 	 */
-	
+
 	get_header();
 	?>
 <div id="content" class="site-content container py-5 mt-5">
@@ -14,7 +14,7 @@
 
         <!-- Hook to add something nice -->
         <?php bs_after_primary(); ?>
-        
+
         <main id="main" class="site-main">
 
             <header class="page-header mb-4">
@@ -22,17 +22,17 @@
                 <?php the_archive_description( '<div class="archive-description">', '</div>' ); ?>
             </header>
 
-            <div class="row">
+            <div class="row" data-masonry='{"percentPosition": true }'>
                 <?php if (have_posts() ) : ?>
                 <?php while (have_posts() ) : the_post(); ?>
 
                 <div class="col-md-6 col-lg-4 col-xxl-3 mb-4">
 
-                    <div class="card h-100">
+                    <div class="card">
 
                         <?php the_post_thumbnail('medium', array('class' => 'card-img-top')); ?>
 
-                        <div class="card-body d-flex flex-column">
+                        <div class="card-body">
 
                             <?php bootscore_category_badge(); ?>
 
@@ -59,7 +59,7 @@
                                 <?php the_excerpt(); ?>
                             </div>
 
-                            <div class="mt-auto">
+                            <div class="">
                                 <a class="read-more" href="<?php the_permalink(); ?>"><?php _e('Read more »', 'bootscore'); ?></a>
                             </div>
 

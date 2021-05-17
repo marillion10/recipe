@@ -6,7 +6,7 @@
 	 *
 	 * @package Bootscore
 	 */
-	
+
 	get_header();
 	?>
 <div id="content" class="site-content container py-5 mt-5">
@@ -14,7 +14,7 @@
 
         <!-- Hook to add something nice -->
         <?php bs_after_primary(); ?>
-        
+
         <main id="main" class="site-main">
 
             <!-- Title & Description -->
@@ -70,7 +70,7 @@
                             </div>
 
                             <div class="">
-                                <a class="read-more" href="<?php the_permalink(); ?>"><?php _e('Read more »', 'bootscore'); ?></a>
+                                <a class="read-more" href="<?php the_permalink(); ?>"><?php _e('Read more »', 'recipe'); ?></a>
                             </div>
 
                             <?php bootscore_tags(); ?>
