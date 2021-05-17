@@ -70,6 +70,19 @@ if (!function_exists('bootscore_bs_headline')) {
 	}
 }
 
+// Shows a headline for ingredients
+if (!function_exists('bootscore_bs_instr_headline')) {
+	function bootscore_bs_instr_headline()
+	{
+
+		$headline = get_post_meta(get_the_ID(), 'instructions_headline', true);
+
+		if (!empty($headline)) {
+			echo '<div class="fw-bold">', $headline, '<p>', '</div>';
+		}
+	}
+}
+
 // Shows instructions for a recipe
 if (!function_exists('bootscore_bs_instructions')) {
 	function bootscore_bs_instructions()
@@ -82,6 +95,36 @@ if (!function_exists('bootscore_bs_instructions')) {
 		}
 	}
 }
+
+// Gallery with slideshow
+if (!function_exists('bs_recipe_gallery')) {
+	function bs_recipe_gallery() {
+		// not shown if ACF is not installed or activated, since we don't have any movie gallery to show anyway
+		if (!function_exists('get_field')) {
+			return;
+		}
+
+		$gallery = get_field('gallery');
+		// dump($gallery);
+
+		if (!$gallery) {
+			return;
+		}
+
+		?>
+			<div class="flexslider">
+				<ul class="slides">
+					<?php foreach ($gallery as $image): ?>
+						<li>
+							<img src="<?php echo $image['url']; ?>">
+						</li>
+					<?php endforeach; ?>
+				</ul>
+			</div>
+		<?php
+	}
+}
+// End gallery with slideshow
 
 // Category Badge
 if ( ! function_exists( 'bootscore_category_badge' ) ) :

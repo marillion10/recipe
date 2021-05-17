@@ -13,8 +13,6 @@ get_header();  ?>
 		<!-- Hook to add something nice -->
 		<?php bs_after_primary(); ?>
 
-
-
 		<div class="row">
 			<div class="col-md-8 col-xxl-9">
 
@@ -44,29 +42,30 @@ get_header();  ?>
 			<?php get_sidebar(); ?>
 
 			<div class="container">
-	<div class="row">
+				<div class="row">
 
-		<div class="col-6"><?php bootscore_bs_headline(); ?>
-		<?php bootscore_bs_ingridients(); ?></div>
-		<div class="col-6"><?php bootscore_bs_instructions(); ?></div>
-	</div>
-</div>
+					<div class="col-6"><?php bootscore_bs_headline(); ?>
+						<?php bootscore_bs_ingridients(); ?></div>
+					<div class="col-6"><?php bootscore_bs_instr_headline(); ?>
+						<?php bootscore_bs_instructions(); ?></div>
+				</div>
+			</div>
 
-<footer class="entry-footer clear-both">
-	<div>
-		<?php bootscore_tags(); ?>
-	</div>
-	<nav aria-label="Page navigation example">
-		<ul class="pagination justify-content-center">
-			<li class="page-item">
-				<?php previous_post_link('%link'); ?>
-			</li>
-			<li class="page-item">
-				<?php next_post_link('%link'); ?>
-			</li>
-		</ul>
-	</nav>
-</footer>
+			<footer class="entry-footer clear-both">
+				<div>
+					<?php bootscore_tags(); ?>
+				</div>
+				<nav aria-label="Page navigation example">
+					<ul class="pagination justify-content-center">
+						<li class="page-item">
+							<?php previous_post_link('%link'); ?>
+						</li>
+						<li class="page-item">
+							<?php next_post_link('%link'); ?>
+						</li>
+					</ul>
+				</nav>
+			</footer>
 
 
 		</div><!-- row -->
