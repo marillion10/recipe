@@ -137,7 +137,7 @@
   }
   .flex-direction-nav a:before {
 	font-family: "flexslider-icon";
-	font-size: 30px;
+	font-size: 40px;
 	display: inline-block;
 	content: '\f001';
 	color: rgba(0, 0, 0, 0.8);
@@ -242,7 +242,7 @@
   }
   .flex-control-thumbs li {
 	width: 25%;
-	float: center;
+	float: left;
 	margin: 0;
   }
   .flex-control-thumbs img {
@@ -264,16 +264,6 @@
 	opacity: 1;
 	cursor: default;
   }
-
-  .flexslider {
-	  width: 100%;
-	  height: 600px;
-  }
-
-  .flexslider .slides img {
-	  width: 100%;
-	  height: 600px;
-  }
   /* ====================================================================================================================
    * RESPONSIVE
    * ====================================================================================================================*/
@@ -286,4 +276,14 @@
 	  opacity: 1;
 	  right: 10px;
 	}
+  }
+
+  .flexslider {
+	  width: auto;
+	  height: auto;
+  }
+
+  .flexslider .slides img {
+	  width: auto;
+	  height: auto;
   }

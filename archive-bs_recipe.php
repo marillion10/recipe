@@ -63,6 +63,13 @@ get_header();
 			<?php get_sidebar(); ?>
 		</div><!-- row -->
 
+
+		<!-- Recipe Image slider -->
+		<center>
+			<div class="flexslider2"><?php bs_recipe_gallery(); ?></div>
+		</center>
+		<!-- Recipe Image slider -->
+
 	</div><!-- #primary -->
 </div><!-- #content -->
 

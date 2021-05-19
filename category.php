@@ -1,7 +1,5 @@
 <?php
 
-get_template_part('template-parts/header-image');
-
 		/**
 		 * The template for displaying category pages
 		 *
@@ -11,12 +9,14 @@ get_template_part('template-parts/header-image');
  */
 
 		get_header();
+		get_template_part('template-parts/header-image');
 		?>
 
 		<?php
 		// Load next post to display
-		the_post();
+
 		get_template_part('template-parts/content', 'excerpt');
+		the_post();
 		?>
 
 		<?php

@@ -94,7 +94,7 @@ if (!function_exists('bootscore_setup')) :
 		/**
 		 * Declare our own image size for archives
 		 */
-		add_image_size('featured-image-thumb', 150, 9999);
+		add_image_size('featured-image-thumb', 350, 9999);
 
 		add_theme_support('post-thumbnails');
 
@@ -126,7 +126,7 @@ add_action('after_setup_theme', 'bootscore_setup');
  *
  * @return void
  */
-function mbt_navbar_brand()
+function bs_navbar_brand()
 {
 	$custom_logo_id = get_theme_mod('custom_logo');
 	$logo = wp_get_attachment_image_src($custom_logo_id, 'full');

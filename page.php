@@ -22,11 +22,11 @@ get_header();
 		<!-- Hook to add something nice -->
 		<?php bs_after_primary(); ?>
 
-		<?php the_title('<h1>', '</h1>'); ?>
+		<div class="ms-5 mb-5 "><?php the_title('<h1>', '</h1>'); ?></div>
 
-		<!-- Movie Gallery -->
-		<?php bs_recipe_gallery(); ?>
-		<!-- Movie Gallery -->
+		<!-- Recipe Image slider -->
+		<center class="flex-viewport"><?php bs_recipe_gallery(); ?></center>
+		<!-- Recipe Image slider -->
 
 		<main id="main" class="site-main">
 
@@ -37,7 +37,7 @@ get_header();
 				<?php bootscore_post_thumbnail(); ?>
 				<!-- .entry-header -->
 			</header>
-			<div class="entry-content mb-5">
+			<div class="entry-content ms-5 mb-5">
 				<!-- Content -->
 				<?php the_content(); ?>
 				<!-- .entry-content -->
