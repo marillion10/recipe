@@ -6,7 +6,7 @@
 	 *
 	 * @package Bootscore
 	 */
-	
+
 	get_header();
 	?>
 <div id="content" class="site-content container py-5 mt-5">

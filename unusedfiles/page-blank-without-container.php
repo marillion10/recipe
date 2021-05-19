@@ -1,24 +1,24 @@
 <?php
 	/**
-	 * Template Name: Blank with container
+	 * Template Name: Blank without container
 	 *
 	 * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
 	 *
 	 * @package Bootscore
 	 */
-	
+
 	get_header();
-	?>	
-<div id="content" class="site-content container">
+	?>
+<div id="content" class="site-content">
     <div id="primary" class="content-area">
-        
+
         <main id="main" class="site-main">
 
             <div class="entry-content">
                 <?php the_post(); ?>
                 <?php the_content(); ?>
                 <?php wp_link_pages( array(
-					'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'bootscore' ),
+					'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'recipe' ),
 					'after'  => '</div>',
 					) );
 					?>

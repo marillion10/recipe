@@ -1083,6 +1083,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 }
 
 #site-header img {
+	margin-top: 50px;
 	min-height: 20vh;
 	object-fit: cover;
 	width: 100%;
@@ -1113,4 +1114,3 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 #site-header .header-text .header-subtitle a:hover {
 	color: #ddd;
 }
-
